@@ -1,0 +1,3 @@
+github "ReactiveKit/Bond" "6.6.1"
+github "ReactiveKit/ReactiveKit" "v3.9.2"
+github "tonyarnold/Differ" "1.0.3"
