@@ -50,12 +50,7 @@ playground.xcworkspace
 # Carthage
 #
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
-<<<<<<< HEAD
 Carthage/Checkouts
-=======
-# Carthage/Checkouts
->>>>>>> 9cf080b36cdbf6ba5e6c027fdcdece5a8e73c0ec
-
 Carthage/Build
 
 # fastlane
