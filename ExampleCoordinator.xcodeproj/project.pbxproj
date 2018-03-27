@@ -31,7 +31,7 @@
 		C20C91D0206499120091223C /* ChildViewControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C91CF206499120091223C /* ChildViewControllers.swift */; };
 		C20C91D2206499330091223C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C91D1206499330091223C /* DetailViewController.swift */; };
 		C20C91D42064994C0091223C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C91D32064994C0091223C /* StartViewController.swift */; };
-		C2303FAB206923010017BA55 /* PinpadViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2303FAA206923010017BA55 /* PinpadViewController.xib */; };
+		C2303FAB206923010017BA55 /* PortalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2303FAA206923010017BA55 /* PortalViewController.xib */; };
 		C2303FAD206923120017BA55 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2303FAC206923120017BA55 /* PortalViewController.swift */; };
 		C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302A206AA89400DB4179 /* AboutViewController.swift */; };
 		C295302D206AA8A900DB4179 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C295302C206AA8A900DB4179 /* AboutViewController.xib */; };
@@ -83,7 +83,7 @@
 		C20C91CF206499120091223C /* ChildViewControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllers.swift; sourceTree = "<group>"; };
 		C20C91D1206499330091223C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C20C91D32064994C0091223C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		C2303FAA206923010017BA55 /* PinpadViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PinpadViewController.xib; sourceTree = "<group>"; };
+		C2303FAA206923010017BA55 /* PortalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortalViewController.xib; sourceTree = "<group>"; };
 		C2303FAC206923120017BA55 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
 		C295302A206AA89400DB4179 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C295302C206AA8A900DB4179 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 				C20C9196206148E80091223C /* BottomLeftViewController.xib */,
 				C20C919820617B320091223C /* DetailViewController.xib */,
 				C2A419AC2068778600D4137E /* ExitViewController.xib */,
-				C2303FAA206923010017BA55 /* PinpadViewController.xib */,
+				C2303FAA206923010017BA55 /* PortalViewController.xib */,
 				C295302C206AA8A900DB4179 /* AboutViewController.xib */,
 			);
 			path = Xib;
@@ -267,7 +267,7 @@
 				C20C9197206148E80091223C /* BottomLeftViewController.xib in Resources */,
 				C20C9170206052340091223C /* MainViewController.xib in Resources */,
 				C295302D206AA8A900DB4179 /* AboutViewController.xib in Resources */,
-				C2303FAB206923010017BA55 /* PinpadViewController.xib in Resources */,
+				C2303FAB206923010017BA55 /* PortalViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
