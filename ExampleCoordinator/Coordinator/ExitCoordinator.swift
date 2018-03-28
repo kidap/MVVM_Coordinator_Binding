@@ -15,8 +15,12 @@ class ExitCoordinator {
     var childCoordinators = [UIViewController: Coordinator]()
     var rootController: UIViewController
     
-    init() {
+    // Private variables
+    var onExit: ()->()
+    
+    init(onExit: @escaping ()->()) {
         self.rootController = ExitViewController()
+        self.onExit = onExit
     }
     
     deinit {
@@ -30,8 +34,7 @@ extension ExitCoordinator: Coordinator {
         print("✅ Starting ExitCoordinator")
         guard let viewController = rootController as? ExitViewController else { return }
         viewController.onExit = { [weak self] in
-            self?.didFinish?()
-            
+            self?.onExit()
         }
     }
 }

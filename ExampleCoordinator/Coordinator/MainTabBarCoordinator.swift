@@ -33,7 +33,9 @@ class MainTabBarCoordinator {
 extension MainTabBarCoordinator: TabBarControllerCoordinator {
     func start() {
         let flowCoordinator = FlowCoordinator()
-        let exitCoordinator = ExitCoordinator()
+        let exitCoordinator = ExitCoordinator() { [unowned self] in
+            self.didFinish?()
+        }
         
         add(childCoordinators: [flowCoordinator, exitCoordinator])
     }

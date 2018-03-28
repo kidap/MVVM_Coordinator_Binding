@@ -80,6 +80,10 @@ extension NavigationControllerCoordinator {
         store(coordinator: childCoordinator)
         
         childCoordinator.didFinish = { [unowned childCoordinator, unowned self] in
+            if let tabBarControllerCoordinator = childCoordinator as? TabBarControllerCoordinator {
+                tabBarControllerCoordinator.willFinish()
+            }
+            
             self.free(coordinator: childCoordinator)
         }
         
@@ -127,7 +131,6 @@ private extension TabBarControllerCoordinator {
         store(coordinator: childCoordinator)
         
         childCoordinator.didFinish = { [unowned self] in
-            self.willFinish()
             self.didFinish?()
         }
         
