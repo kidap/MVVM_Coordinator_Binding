@@ -132,7 +132,7 @@ class BottomLeftViewModel {
         var height: Observable<CGFloat>
     }
     var state: State
-    var onDetail: (() -> ())
+    let onDetail: (() -> ())
     
     init(text: String, isExpanded: Bool, onDetail: @escaping () -> ()) {
         self.state = State(text: Observable(text), isExpanded: Observable(isExpanded), expandButtonTitle: Observable(expandTitle), height: Observable(collapseHeight))

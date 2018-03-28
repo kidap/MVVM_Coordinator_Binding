@@ -16,8 +16,8 @@ import ReactiveKit
 // VIEW MODEL
 //------------------
 class StartViewModel {
-    var onStart: (() -> ())
-    var onAbout: (() -> ())
+    let onStart: (() -> ())
+    let onAbout: (() -> ())
     
     init(onStart: @escaping (() -> ()), onAbout: @escaping (() -> ())) {
         self.onStart = onStart
