@@ -11,7 +11,7 @@ import UIKit
 //--------------------------------------------------------------------------------
 //    APP COORDINATOR
 //--------------------------------------------------------------------------------
-class AppCoordinator: NSObject, NavigationControllerCoordinator {
+class AppCoordinator: NSObject {
     
     //Coordinator Protocol Requirements
     var didFinish: (() -> ())?
@@ -19,10 +19,9 @@ class AppCoordinator: NSObject, NavigationControllerCoordinator {
     var rootController: UIViewController { return navigationController }
     
     // NavigationControllerCoordinator Protocol Requirements
-    let navigationController: UINavigationController
+    let navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
     
     override init() {
-        self.navigationController = UINavigationController(nibName: nil, bundle: nil)
         super.init()
         navigationController.delegate = self
     }
@@ -33,7 +32,7 @@ class AppCoordinator: NSObject, NavigationControllerCoordinator {
 }
 
 //MARK:- Coordinator
-extension AppCoordinator: Coordinator {
+extension AppCoordinator: NavigationControllerCoordinator {
     func start() {
         print("✅ Starting AppCoordinator")
         showStart()

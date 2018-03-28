@@ -19,10 +19,9 @@ class MainTabBarCoordinator {
     var rootController: UIViewController { return tabBarController }
     
     // TabBarControllerCoordinator Protocol Requirements
-    let tabBarController: UITabBarController
-        
+    let tabBarController: UITabBarController = UITabBarController(nibName: nil, bundle: nil)
+    
     init() {
-        self.tabBarController = UITabBarController(nibName: nil, bundle: nil)
     }
     
     deinit {

@@ -12,13 +12,24 @@ import UIKit
 //    DETAIL COORDINATOR
 //--------------------------------------------------------------------------------
 class DetailCoordinator {
+    
+    //Coordinator Protocol Requirements
     var rootController: UIViewController
     var childCoordinators = [UIViewController: Coordinator]()
     var didFinish: (() -> ())?
     
-    init() {
-        let viewModel = DetailViewModel(onClose: {})
+    //Public variables
+    var onClose: (() -> Void)! {
+        didSet {
+            guard let detailViewController = rootController as? DetailViewController else { return }
+            detailViewController.viewModel.onClose = onClose
+        }
+    }
+    
+    init(onClose: (() -> Void)? = nil) {
+        let viewModel = DetailViewModel(onClose: onClose ?? {} )
         self.rootController = DetailViewController(viewModel: viewModel)
+        self.onClose = onClose
     }
     
     deinit {
@@ -32,7 +43,7 @@ extension DetailCoordinator: Coordinator {
         print("✅ Starting DetailCoordinator")
         guard let detailViewController = rootController as? DetailViewController else { return }
         detailViewController.viewModel.onClose = { [unowned self] in
-            self.didFinish?()
+            self.onClose()
         }
     }
 }

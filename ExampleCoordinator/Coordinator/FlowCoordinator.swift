@@ -18,12 +18,10 @@ class FlowCoordinator: NSObject {
     var childCoordinators = [UIViewController: Coordinator]()
     var rootController: UIViewController { return navigationController }
     
-    
     //NavigationControllerCoordinator Protocol Requirements
-    var navigationController: UINavigationController
+    var navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
     
     override init() {
-        self.navigationController = UINavigationController(nibName: nil, bundle: nil)
         super.init()
         navigationController.delegate = self
     }
@@ -52,6 +50,9 @@ private extension FlowCoordinator {
     
     func showDetail() {
         let childCoordinator = DetailCoordinator()
+        childCoordinator.onClose = { [unowned childCoordinator] in
+            childCoordinator.didFinish?()
+        }
         push(childCoordinator, animated: true)
     }
 }
