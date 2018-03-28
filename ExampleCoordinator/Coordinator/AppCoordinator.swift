@@ -37,6 +37,11 @@ extension AppCoordinator: NavigationControllerCoordinator {
         print("✅ Starting AppCoordinator")
         showStart()
     }
+    
+    // UINavigationControllerDelegate - required in classes that conform to NavigationControllerCoordinator *boilerplate*
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        navigationControllerTransitioned(navigationController, didShow: viewController, animated: animated)
+    }
 }
 
 //MARK:- Private Methods
