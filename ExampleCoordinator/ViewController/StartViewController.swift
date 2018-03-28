@@ -16,10 +16,12 @@ import ReactiveKit
 // VIEW MODEL
 //------------------
 class StartViewModel {
-    var onStart: (() -> ())!
-    var onAbout: (() -> ())!
+    var onStart: (() -> ())
+    var onAbout: (() -> ())
     
-    init() {
+    init(onStart: @escaping (() -> ()), onAbout: @escaping (() -> ())) {
+        self.onStart = onStart
+        self.onAbout = onAbout
     }
     
     deinit {

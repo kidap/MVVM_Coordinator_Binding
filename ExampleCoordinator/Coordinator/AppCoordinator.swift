@@ -43,15 +43,12 @@ extension AppCoordinator: NavigationControllerCoordinator {
 private extension AppCoordinator {
     func showStart() {
         print("✅ Starting StartViewController")
-        let viewModel = StartViewModel()
+        let viewModel = StartViewModel(onStart: {[unowned self] in
+                self.showPortal()
+            }, onAbout: {[unowned self] in
+                self.showAbout()
+        })
         let startViewController = StartViewController(viewModel: viewModel)
-        
-        startViewController.viewModel.onStart = { [unowned self] in
-            self.showPortal()
-        }
-        startViewController.viewModel.onAbout = { [unowned self] in
-            self.showAbout()
-        }
         
         push(startViewController, animated: true)
     }
