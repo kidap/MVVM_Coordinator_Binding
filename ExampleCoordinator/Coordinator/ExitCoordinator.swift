@@ -8,16 +8,15 @@
 
 import UIKit
 
-class ExitCoordinator: NSObject {
+class ExitCoordinator {
     
     //Coordinator Protocol Requirements
     var didFinish: (() -> ())?
     var childCoordinators = [UIViewController: Coordinator]()
     var rootController: UIViewController
     
-    override init() {
+    init() {
         self.rootController = ExitViewController()
-        super.init()
     }
     
     deinit {

@@ -64,6 +64,7 @@ class MainViewController: UIViewController {
         title = "Main VC"
         setFramesOfChildVCs()
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         

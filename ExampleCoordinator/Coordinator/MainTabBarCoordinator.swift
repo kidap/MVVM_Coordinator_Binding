@@ -11,7 +11,7 @@ import UIKit
 //--------------------------------------------------------------------------------
 //    TAB COORDINATOR
 //--------------------------------------------------------------------------------
-class MainTabBarCoordinator: NSObject {
+class MainTabBarCoordinator {
     
     //Coordinator Protocol Requirements
     var didFinish: (() -> ())?
@@ -21,9 +21,8 @@ class MainTabBarCoordinator: NSObject {
     // TabBarControllerCoordinator Protocol Requirements
     let tabBarController: UITabBarController
         
-    override init() {
+    init() {
         self.tabBarController = UITabBarController(nibName: nil, bundle: nil)
-        super.init()
     }
     
     deinit {
