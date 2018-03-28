@@ -38,6 +38,8 @@ protocol NavigationControllerCoordinator: UINavigationControllerDelegate, Coordi
 }
 
 extension NavigationControllerCoordinator {
+    // Warning can't be fixed. See bug report below
+    // https://bugs.swift.org/browse/SR-3349?focusedCommentId=21826&page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#comment-21826
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
         guard let fromVC = navigationController.transitionCoordinator?.viewController(forKey: .from) else { return }
         guard !navigationController.viewControllers.contains(fromVC) else { return }
