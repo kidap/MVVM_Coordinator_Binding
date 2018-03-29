@@ -71,10 +71,12 @@ class RightViewModel {
     
     var state: State
     var onDetail: (() -> ())
+    var onPopup: (() -> ())
     
-    init(text: String, onDetail: @escaping () -> ()) {
+    init(text: String, onDetail: @escaping () -> (), onPopup: @escaping () -> ()) {
         self.state = State(text: Observable(text))
         self.onDetail = onDetail
+        self.onPopup = onPopup
     }
     
     deinit {
@@ -88,6 +90,7 @@ class RightViewModel {
 class RightViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var showDetailButton: UIButton!
+    @IBOutlet weak var showPopupButton: UIButton!
     var viewModel: RightViewModel!
     private var disposeBag: DisposeBag = DisposeBag()
     
@@ -104,6 +107,7 @@ class RightViewController: UIViewController {
     func setupBindings() {
         viewModel.state.text.bind(to: label.reactive.text).dispose(in: disposeBag)
         showDetailButton.reactive.tap.observeNext(with: viewModel.onDetail).dispose(in: disposeBag)
+        showPopupButton.reactive.tap.observeNext(with: viewModel.onPopup).dispose(in: disposeBag)
     }
     
     deinit {

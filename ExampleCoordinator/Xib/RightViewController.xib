@@ -14,6 +14,7 @@
             <connections>
                 <outlet property="label" destination="XBB-jU-ktB" id="gMs-Hd-xXK"/>
                 <outlet property="showDetailButton" destination="TCQ-7l-KUm" id="iey-ID-gLs"/>
+                <outlet property="showPopupButton" destination="chr-fP-y34" id="2Gq-Ia-MQq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="9OQ-on-oj4"/>
             </connections>
         </placeholder>
@@ -32,6 +33,10 @@
                     <rect key="frame" x="147" y="354" width="81" height="30"/>
                     <state key="normal" title="Show Detail"/>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chr-fP-y34">
+                    <rect key="frame" x="142" y="40" width="90" height="30"/>
+                    <state key="normal" title="Show Pop up"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -39,6 +44,8 @@
                 <constraint firstItem="XBB-jU-ktB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LRA-Zz-kTL"/>
                 <constraint firstItem="XBB-jU-ktB" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Nix-4t-T58"/>
                 <constraint firstItem="TCQ-7l-KUm" firstAttribute="top" secondItem="XBB-jU-ktB" secondAttribute="bottom" constant="10" id="ZTD-Ql-1Ah"/>
+                <constraint firstItem="chr-fP-y34" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="dGb-yz-uMW"/>
+                <constraint firstItem="chr-fP-y34" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dwb-bR-oDf"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
         </view>

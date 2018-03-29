@@ -46,9 +46,11 @@ extension MainCoordinator: Coordinator {
         }
         
         // RIGHT
-        let rightViewModel = RightViewModel(text: "") { [unowned self] in
+        let rightViewModel = RightViewModel(text: "", onDetail: { [unowned self] in
             self.onDetail()
-        }
+            }, onPopup: {[unowned self] in
+                self.onPopup()
+        })
         
         // LEFT
         let leftViewModel = LeftViewModel()
@@ -70,6 +72,22 @@ extension MainCoordinator: Coordinator {
 
         
         testDealloc()
+    }
+    
+    func onPopup() {
+        let childCoordinator = PopupCoordinator() {}
+        childCoordinator.onClose = { [unowned childCoordinator] in
+            childCoordinator.didFinish?()
+        }
+        store(coordinator: childCoordinator)
+        
+        childCoordinator.didFinish = { [unowned childCoordinator, unowned self] in
+            self.rootController.dismiss(animated: true, completion: nil)
+            self.free(coordinator: childCoordinator)
+        }
+        
+        childCoordinator.start()
+        rootController.present(childCoordinator.rootController, animated: true, completion: nil)
     }
     
     func testDealloc() {

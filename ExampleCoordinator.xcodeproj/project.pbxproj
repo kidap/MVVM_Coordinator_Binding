@@ -35,12 +35,15 @@
 		C2303FAD206923120017BA55 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2303FAC206923120017BA55 /* PortalViewController.swift */; };
 		C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302A206AA89400DB4179 /* AboutViewController.swift */; };
 		C295302D206AA8A900DB4179 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C295302C206AA8A900DB4179 /* AboutViewController.xib */; };
+		C2953030206D1DD800DB4179 /* PopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302F206D1DD800DB4179 /* PopupCoordinator.swift */; };
 		C2A419A92068774500D4137E /* BlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A419A82068774500D4137E /* BlankViewController.swift */; };
 		C2A419AD2068778600D4137E /* ExitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2A419AC2068778600D4137E /* ExitViewController.xib */; };
 		C2A419AF2068812F00D4137E /* ExitCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A419AE2068812F00D4137E /* ExitCoordinator.swift */; };
 		C2AC896020655385007C090A /* MainTabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AC895F20655385007C090A /* MainTabBarCoordinator.swift */; };
 		C2D75432206A926000E1A8B2 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D75431206A926000E1A8B2 /* Coordinator.swift */; };
 		C2D75435206AA38100E1A8B2 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D75434206AA38100E1A8B2 /* MainCoordinator.swift */; };
+		C2D85408206D4BC9006528C5 /* PopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2D85407206D4BC9006528C5 /* PopupViewController.xib */; };
+		C2D8540A206D4BD3006528C5 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D85409206D4BD3006528C5 /* PopupViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -87,12 +90,15 @@
 		C2303FAC206923120017BA55 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
 		C295302A206AA89400DB4179 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C295302C206AA8A900DB4179 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		C295302F206D1DD800DB4179 /* PopupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCoordinator.swift; sourceTree = "<group>"; };
 		C2A419A82068774500D4137E /* BlankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankViewController.swift; sourceTree = "<group>"; };
 		C2A419AC2068778600D4137E /* ExitViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExitViewController.xib; sourceTree = "<group>"; };
 		C2A419AE2068812F00D4137E /* ExitCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExitCoordinator.swift; sourceTree = "<group>"; };
 		C2AC895F20655385007C090A /* MainTabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarCoordinator.swift; sourceTree = "<group>"; };
 		C2D75431206A926000E1A8B2 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C2D75434206AA38100E1A8B2 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C2D85407206D4BC9006528C5 /* PopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopupViewController.xib; sourceTree = "<group>"; };
+		C2D85409206D4BD3006528C5 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +163,7 @@
 				C2A419AC2068778600D4137E /* ExitViewController.xib */,
 				C2303FAA206923010017BA55 /* PortalViewController.xib */,
 				C295302C206AA8A900DB4179 /* AboutViewController.xib */,
+				C2D85407206D4BC9006528C5 /* PopupViewController.xib */,
 			);
 			path = Xib;
 			sourceTree = "<group>";
@@ -170,6 +177,7 @@
 				C2D75434206AA38100E1A8B2 /* MainCoordinator.swift */,
 				C20C91CC206498780091223C /* DetailCoordinator.swift */,
 				C2A419AE2068812F00D4137E /* ExitCoordinator.swift */,
+				C295302F206D1DD800DB4179 /* PopupCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -184,6 +192,7 @@
 				C2A419A82068774500D4137E /* BlankViewController.swift */,
 				C2303FAC206923120017BA55 /* PortalViewController.swift */,
 				C295302A206AA89400DB4179 /* AboutViewController.swift */,
+				C2D85409206D4BD3006528C5 /* PopupViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -263,6 +272,7 @@
 				C20C919920617B320091223C /* DetailViewController.xib in Resources */,
 				C2A419AD2068778600D4137E /* ExitViewController.xib in Resources */,
 				C20C9163206046510091223C /* Assets.xcassets in Resources */,
+				C2D85408206D4BC9006528C5 /* PopupViewController.xib in Resources */,
 				C20C9161206046510091223C /* Main.storyboard in Resources */,
 				C20C9197206148E80091223C /* BottomLeftViewController.xib in Resources */,
 				C20C9170206052340091223C /* MainViewController.xib in Resources */,
@@ -283,10 +293,12 @@
 				C20C91D0206499120091223C /* ChildViewControllers.swift in Sources */,
 				C20C91CB2064983E0091223C /* AppCoordinator.swift in Sources */,
 				C20C91CD206498780091223C /* DetailCoordinator.swift in Sources */,
+				C2D8540A206D4BD3006528C5 /* PopupViewController.swift in Sources */,
 				C2AC896020655385007C090A /* MainTabBarCoordinator.swift in Sources */,
 				C2D75432206A926000E1A8B2 /* Coordinator.swift in Sources */,
 				C20C91D42064994C0091223C /* StartViewController.swift in Sources */,
 				C20C915C206046510091223C /* AppDelegate.swift in Sources */,
+				C2953030206D1DD800DB4179 /* PopupCoordinator.swift in Sources */,
 				C2A419A92068774500D4137E /* BlankViewController.swift in Sources */,
 				C2A419AF2068812F00D4137E /* ExitCoordinator.swift in Sources */,
 				C20C91A62062C2ED0091223C /* CoreData.xcdatamodeld in Sources */,
