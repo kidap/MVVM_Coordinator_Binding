@@ -11,19 +11,19 @@ import UIKit
 //--------------------------------------------------------------------------------
 //    APP COORDINATOR
 //--------------------------------------------------------------------------------
-class AppCoordinator: NSObject {
+class AppCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
-    var rootController: UIViewController { return navigationController }
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     
     // NavigationControllerCoordinator Protocol Requirements
     let navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
+    var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
+    }
     
-    override init() {
-        super.init()
-        navigationController.delegate = self
+    init() {
+        navigationController.delegate = navigationControllerCoordinatorDelegate
     }
     
     deinit {
@@ -36,11 +36,6 @@ extension AppCoordinator: NavigationControllerCoordinator {
     func start() {
         print("✅ Starting AppCoordinator")
         showStart()
-    }
-    
-    // UINavigationControllerDelegate - required in classes that conform to NavigationControllerCoordinator *boilerplate*
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        navigationControllerTransitioned(navigationController, didShow: viewController, animated: animated)
     }
 }
 
@@ -71,6 +66,9 @@ private extension AppCoordinator {
     func showMain() {
         print("✅ Starting MainTabBarCoordinator")
         let childCoordinator = MainTabBarCoordinator()
+        childCoordinator.onExit = { [unowned childCoordinator] in
+            childCoordinator.didFinish?()
+        }
         present(childCoordinator, animated: true, completion: nil )
     }
     

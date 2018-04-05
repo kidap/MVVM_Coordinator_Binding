@@ -8,21 +8,26 @@
 
 import UIKit
 
-class PopupCoordinator: NSObject {
+
+//kp:in the future can be an actual PopupCoordinator the can be reused
+class PopupCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     var rootController: UIViewController { return navigationController }
     
     //NavigationControllerCoordinator Protocol Requirements
     var navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
+    var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
+    }
     
     // Private variables
     var onClose: ()->()
     
     init(onClose: @escaping ()->()) {
         self.onClose = onClose
+        self.navigationController.delegate = navigationControllerCoordinatorDelegate
         self.navigationController.modalPresentationStyle = .formSheet
         self.navigationController.preferredContentSize = CGSize(width: 200, height: 200)
     }
@@ -37,11 +42,6 @@ extension PopupCoordinator: NavigationControllerCoordinator {
     func start() {
         print("✅ Starting PopupCoordinator")
         showPopup()
-    }
-    
-    // UINavigationControllerDelegate - required in classes that conform to NavigationControllerCoordinator *boilerplate*
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        navigationControllerTransitioned(navigationController, didShow: viewController, animated: animated)
     }
 }
 

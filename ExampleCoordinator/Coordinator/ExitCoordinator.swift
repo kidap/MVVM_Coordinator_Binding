@@ -11,8 +11,8 @@ import UIKit
 class ExitCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     var rootController: UIViewController
     
     // Private variables

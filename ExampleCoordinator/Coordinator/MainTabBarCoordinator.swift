@@ -14,12 +14,14 @@ import UIKit
 class MainTabBarCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
-    var rootController: UIViewController { return tabBarController }
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     
     // TabBarControllerCoordinator Protocol Requirements
     let tabBarController: UITabBarController = UITabBarController(nibName: nil, bundle: nil)
+    
+    // Private variables
+    var onExit: (()->())!
     
     init() {
     }
@@ -34,7 +36,7 @@ extension MainTabBarCoordinator: TabBarControllerCoordinator {
     func start() {
         let flowCoordinator = FlowCoordinator()
         let exitCoordinator = ExitCoordinator() { [unowned self] in
-            self.didFinish?()
+            self.onExit()
         }
         
         add(childCoordinators: [flowCoordinator, exitCoordinator])

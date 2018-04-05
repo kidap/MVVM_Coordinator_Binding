@@ -97,27 +97,9 @@ class MainViewController: UIViewController {
 }
 
 private extension MainViewController {
-    func addChild(_ vc: UIViewController) {
-        addChildViewController(vc)
-        vc.didMove(toParentViewController: self)
-    }
-    
     func setFramesOfChildVCs() {
         place(bottomLeftVC.view, in: bottomLeftView )
         place(leftVC.view, in: leftView, belowView: bottomLeftView)
         place(rightVC.view, in: rightView)
-    }
-    
-    func place(_ vcView: UIView, in containerView: UIView, belowView: UIView? = nil) {
-        defer {
-            vcView.frame = containerView.bounds
-        }
-        
-        guard let belowView = belowView else {
-            containerView.addSubview(vcView)
-            return
-        }
-        
-        containerView.insertSubview(vcView, belowSubview: belowView)
     }
 }

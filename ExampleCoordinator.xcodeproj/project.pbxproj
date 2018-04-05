@@ -33,6 +33,10 @@
 		C20C91D42064994C0091223C /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C20C91D32064994C0091223C /* StartViewController.swift */; };
 		C2303FAB206923010017BA55 /* PortalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C2303FAA206923010017BA55 /* PortalViewController.xib */; };
 		C2303FAD206923120017BA55 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2303FAC206923120017BA55 /* PortalViewController.swift */; };
+		C23433AF207655FA00321549 /* NavigationControllerCoordinatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433AE207655FA00321549 /* NavigationControllerCoordinatorDelegate.swift */; };
+		C23433B12076609300321549 /* ChildViewControllerContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B02076609300321549 /* ChildViewControllerContaining.swift */; };
+		C23433B32076697100321549 /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B22076697100321549 /* NavigationControllerCoordinator.swift */; };
+		C23433B52076697E00321549 /* TabBarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B42076697E00321549 /* TabBarControllerCoordinator.swift */; };
 		C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302A206AA89400DB4179 /* AboutViewController.swift */; };
 		C295302D206AA8A900DB4179 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C295302C206AA8A900DB4179 /* AboutViewController.xib */; };
 		C2953030206D1DD800DB4179 /* PopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302F206D1DD800DB4179 /* PopupCoordinator.swift */; };
@@ -88,6 +92,10 @@
 		C20C91D32064994C0091223C /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C2303FAA206923010017BA55 /* PortalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortalViewController.xib; sourceTree = "<group>"; };
 		C2303FAC206923120017BA55 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
+		C23433AE207655FA00321549 /* NavigationControllerCoordinatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinatorDelegate.swift; sourceTree = "<group>"; };
+		C23433B02076609300321549 /* ChildViewControllerContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllerContaining.swift; sourceTree = "<group>"; };
+		C23433B22076697100321549 /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
+		C23433B42076697E00321549 /* TabBarControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerCoordinator.swift; sourceTree = "<group>"; };
 		C295302A206AA89400DB4179 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C295302C206AA8A900DB4179 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		C295302F206D1DD800DB4179 /* PopupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCoordinator.swift; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 				C20C91CC206498780091223C /* DetailCoordinator.swift */,
 				C2A419AE2068812F00D4137E /* ExitCoordinator.swift */,
 				C295302F206D1DD800DB4179 /* PopupCoordinator.swift */,
+				C23433AD207655EB00321549 /* Delegate */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -197,10 +206,29 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		C2D75433206A926400E1A8B2 /* Protocol */ = {
+		C23433AD207655EB00321549 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				C23433AE207655FA00321549 /* NavigationControllerCoordinatorDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		C23433B6207669A000321549 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
 				C2D75431206A926000E1A8B2 /* Coordinator.swift */,
+				C23433B22076697100321549 /* NavigationControllerCoordinator.swift */,
+				C23433B42076697E00321549 /* TabBarControllerCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		C2D75433206A926400E1A8B2 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C23433B6207669A000321549 /* Coordinator */,
+				C23433B02076609300321549 /* ChildViewControllerContaining.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -291,6 +319,8 @@
 				C20C916E2060489D0091223C /* FlowCoordinator.swift in Sources */,
 				C20C915E206046510091223C /* MainViewController.swift in Sources */,
 				C20C91D0206499120091223C /* ChildViewControllers.swift in Sources */,
+				C23433B32076697100321549 /* NavigationControllerCoordinator.swift in Sources */,
+				C23433B52076697E00321549 /* TabBarControllerCoordinator.swift in Sources */,
 				C20C91CB2064983E0091223C /* AppCoordinator.swift in Sources */,
 				C20C91CD206498780091223C /* DetailCoordinator.swift in Sources */,
 				C2D8540A206D4BD3006528C5 /* PopupViewController.swift in Sources */,
@@ -303,9 +333,11 @@
 				C2A419AF2068812F00D4137E /* ExitCoordinator.swift in Sources */,
 				C20C91A62062C2ED0091223C /* CoreData.xcdatamodeld in Sources */,
 				C20C91D2206499330091223C /* DetailViewController.swift in Sources */,
+				C23433AF207655FA00321549 /* NavigationControllerCoordinatorDelegate.swift in Sources */,
 				C2D75435206AA38100E1A8B2 /* MainCoordinator.swift in Sources */,
 				C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */,
 				C2303FAD206923120017BA55 /* PortalViewController.swift in Sources */,
+				C23433B12076609300321549 /* ChildViewControllerContaining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

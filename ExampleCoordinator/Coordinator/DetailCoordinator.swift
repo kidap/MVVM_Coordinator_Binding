@@ -15,8 +15,8 @@ class DetailCoordinator {
     
     //Coordinator Protocol Requirements
     var rootController: UIViewController
-    var childCoordinators = [UIViewController: Coordinator]()
-    var didFinish: (() -> ())?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
+    var didFinish: CoordinatorDidFinish?
     
     //Public variables
     var onClose: (() -> Void)! {

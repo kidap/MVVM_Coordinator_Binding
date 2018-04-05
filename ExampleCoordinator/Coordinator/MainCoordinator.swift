@@ -13,8 +13,8 @@ import ReactiveKit
 class MainCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     var rootController: UIViewController
     
     // Private variables
@@ -79,11 +79,11 @@ extension MainCoordinator: Coordinator {
         childCoordinator.onClose = { [unowned childCoordinator] in
             childCoordinator.didFinish?()
         }
-        store(coordinator: childCoordinator)
+        addReference(to: childCoordinator)
         
         childCoordinator.didFinish = { [unowned childCoordinator, unowned self] in
             self.rootController.dismiss(animated: true, completion: nil)
-            self.free(coordinator: childCoordinator)
+            self.removeReference(from: childCoordinator)
         }
         
         childCoordinator.start()

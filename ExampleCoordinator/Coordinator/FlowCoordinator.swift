@@ -11,19 +11,19 @@ import UIKit
 //--------------------------------------------------------------------------------
 //    MAIN COORDINATOR
 //--------------------------------------------------------------------------------
-class FlowCoordinator: NSObject {
+class FlowCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
-    var rootController: UIViewController { return navigationController }
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     
     //NavigationControllerCoordinator Protocol Requirements
     var navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
-    
-    override init() {
-        super.init()
-        navigationController.delegate = self
+    var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
+    }
+
+    init() {
+        navigationController.delegate = navigationControllerCoordinatorDelegate
     }
     
     deinit {
@@ -36,11 +36,6 @@ extension FlowCoordinator: NavigationControllerCoordinator {
     func start() {
         print("✅ Starting FlowCoordinator")
         showMainViewController()
-    }
-    
-    // UINavigationControllerDelegate - required in classes that conform to NavigationControllerCoordinator *boilerplate*
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        navigationControllerTransitioned(navigationController, didShow: viewController, animated: animated)
     }
 }
 
