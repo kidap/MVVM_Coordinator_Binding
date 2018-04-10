@@ -12,7 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LeftViewController" customModule="ExampleCoordinator" customModuleProvider="target">
             <connections>
+                <outlet property="saveButton" destination="zG3-Ve-Ewi" id="FCT-du-pwx"/>
                 <outlet property="textField" destination="p6h-mN-RJT" id="jyT-x3-M09"/>
+                <outlet property="textFieldOnViewContext" destination="9U4-zT-CTg" id="ZYc-lt-IWV"/>
                 <outlet property="view" destination="iN0-l3-epB" id="K2Y-OW-xHy"/>
             </connections>
         </placeholder>
@@ -21,21 +23,53 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Hello World" borderStyle="roundedRect" placeholder="enter text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-mN-RJT">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p6h-mN-RJT">
                     <rect key="frame" x="10" y="318.5" width="355" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uses backgroundContext" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FaQ-zx-3Pk">
+                    <rect key="frame" x="90" y="287.5" width="195" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Uses viewContext" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pcu-Wk-A2z">
+                    <rect key="frame" x="118.5" y="20" width="138" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9U4-zT-CTg">
+                    <rect key="frame" x="10" y="51" width="355" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-Ve-Ewi">
+                    <rect key="frame" x="170" y="91" width="34" height="30"/>
+                    <state key="normal" title="Save"/>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.4823529411764706" green="0.17254901960784313" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="zG3-Ve-Ewi" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="GQH-U6-7IR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="9U4-zT-CTg" secondAttribute="trailing" constant="10" id="HDF-Kh-2Je"/>
+                <constraint firstItem="Pcu-Wk-A2z" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JNs-73-NTU"/>
                 <constraint firstItem="p6h-mN-RJT" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KJw-pz-FuH"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="p6h-mN-RJT" secondAttribute="trailing" constant="10" id="Ocy-8K-O3a"/>
+                <constraint firstItem="9U4-zT-CTg" firstAttribute="top" secondItem="Pcu-Wk-A2z" secondAttribute="bottom" constant="10" id="Oem-UD-pus"/>
+                <constraint firstItem="p6h-mN-RJT" firstAttribute="top" secondItem="FaQ-zx-3Pk" secondAttribute="bottom" constant="10" id="Of1-Vi-3LJ"/>
+                <constraint firstItem="zG3-Ve-Ewi" firstAttribute="top" secondItem="9U4-zT-CTg" secondAttribute="bottom" constant="10" id="bzg-dU-3h2"/>
                 <constraint firstItem="p6h-mN-RJT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="gAN-eC-N8z"/>
+                <constraint firstItem="9U4-zT-CTg" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="kCQ-er-APO"/>
                 <constraint firstItem="p6h-mN-RJT" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="oPV-aT-6cb"/>
+                <constraint firstItem="FaQ-zx-3Pk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qLf-m0-e8g"/>
+                <constraint firstItem="Pcu-Wk-A2z" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xhh-eJ-QhB"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="35.5" y="53.5"/>
         </view>
     </objects>
 </document>

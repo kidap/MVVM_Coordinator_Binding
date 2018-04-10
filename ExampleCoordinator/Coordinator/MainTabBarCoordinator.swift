@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //--------------------------------------------------------------------------------
 //    TAB COORDINATOR
@@ -20,10 +21,14 @@ class MainTabBarCoordinator {
     // TabBarControllerCoordinator Protocol Requirements
     let tabBarController: UITabBarController = UITabBarController(nibName: nil, bundle: nil)
     
-    // Private variables
+    // Public variables
     var onExit: (()->())!
     
-    init() {
+    // Private variables
+    private let container: NSPersistentContainer
+    
+    init(container: NSPersistentContainer = CoreDataManager.container) {
+        self.container = container
     }
     
     deinit {

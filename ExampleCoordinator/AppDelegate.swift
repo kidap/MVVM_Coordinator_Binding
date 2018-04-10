@@ -15,12 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var appCoordinator: AppCoordinator?
 
+    func addSeed() {
+        let fetchRequest = NSFetchRequest<Person>(entityName: "Person")
+        
+        let persons: [Person] = try! persistentContainer.viewContext.fetch(fetchRequest) as [Person]
+        
+        print(persons)
+        if persons.count == 0 {
+            let person = NSEntityDescription.insertNewObject(forEntityName: "Person", into: persistentContainer.viewContext) as! Person
+            person.name = "John Snow"
+            person.age = 1
+            try! persistentContainer.viewContext.save()
+        }
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        appCoordinator = AppCoordinator()
+        addSeed()
+        
+        appCoordinator = AppCoordinator(container: persistentContainer)
         window?.rootViewController = appCoordinator?.rootController
         
         appCoordinator?.start()

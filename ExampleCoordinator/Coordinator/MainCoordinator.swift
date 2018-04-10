@@ -9,6 +9,7 @@
 import UIKit
 import Bond
 import ReactiveKit
+import CoreData
 
 class MainCoordinator {
     
@@ -19,9 +20,12 @@ class MainCoordinator {
     
     // Private variables
     private var disposeBag = DisposeBag()
-    var onDetail: (() -> ())
+    private let container: NSPersistentContainer
     
-    init(onDetail: @escaping (() -> ())) {
+    var onDetail: (() -> ())
+
+    init(container: NSPersistentContainer = CoreDataManager.container, onDetail: @escaping (() -> ())) {
+        self.container = container
         self.onDetail = onDetail
         let viewModel = MainViewModel()
         let mainViewController = MainViewController(viewModel: viewModel)
@@ -41,7 +45,7 @@ extension MainCoordinator: Coordinator {
         guard let mainViewController = rootController as? MainViewController else { return }
         
         // BOTTOM LEFT
-        let bottomLeftViewModel = BottomLeftViewModel(text: "Hello World", isExpanded: false) { [unowned self] in
+        let bottomLeftViewModel = BottomLeftViewModel(text: "", isExpanded: false) { [unowned self] in
             self.onDetail()
         }
         
@@ -56,8 +60,8 @@ extension MainCoordinator: Coordinator {
         let leftViewModel = LeftViewModel()
         
         //Bindings
-        leftViewModel.state.text.bind(to: rightViewModel.state.text).dispose(in: disposeBag)
-        rightViewModel.state.text.bind(to: bottomLeftViewModel.state.text).dispose(in: disposeBag)
+//        leftViewModel.state.text.bind(to: rightViewModel.state.text).dispose(in: disposeBag)
+//        rightViewModel.state.text.bind(to: bottomLeftViewModel.state.text).dispose(in: disposeBag)
         bottomLeftViewModel.state.height.bind(to: mainViewController.viewModel.state.bottomLeftHeight).dispose(in: disposeBag)
         
         let rightVC = RightViewController(viewModel: rightViewModel)

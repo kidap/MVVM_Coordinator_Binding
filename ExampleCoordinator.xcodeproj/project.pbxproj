@@ -37,6 +37,7 @@
 		C23433B12076609300321549 /* ChildViewControllerContaining.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B02076609300321549 /* ChildViewControllerContaining.swift */; };
 		C23433B32076697100321549 /* NavigationControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B22076697100321549 /* NavigationControllerCoordinator.swift */; };
 		C23433B52076697E00321549 /* TabBarControllerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B42076697E00321549 /* TabBarControllerCoordinator.swift */; };
+		C23433B82077AE8B00321549 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C23433B72077AE8B00321549 /* CoreData.swift */; };
 		C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302A206AA89400DB4179 /* AboutViewController.swift */; };
 		C295302D206AA8A900DB4179 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C295302C206AA8A900DB4179 /* AboutViewController.xib */; };
 		C2953030206D1DD800DB4179 /* PopupCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C295302F206D1DD800DB4179 /* PopupCoordinator.swift */; };
@@ -96,6 +97,7 @@
 		C23433B02076609300321549 /* ChildViewControllerContaining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildViewControllerContaining.swift; sourceTree = "<group>"; };
 		C23433B22076697100321549 /* NavigationControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationControllerCoordinator.swift; sourceTree = "<group>"; };
 		C23433B42076697E00321549 /* TabBarControllerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarControllerCoordinator.swift; sourceTree = "<group>"; };
+		C23433B72077AE8B00321549 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		C295302A206AA89400DB4179 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C295302C206AA8A900DB4179 /* AboutViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		C295302F206D1DD800DB4179 /* PopupCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupCoordinator.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				C20C9164206046510091223C /* LaunchScreen.storyboard */,
 				C20C9167206046510091223C /* Info.plist */,
 				C20C91A42062C2ED0091223C /* CoreData.xcdatamodeld */,
+				C23433B72077AE8B00321549 /* CoreData.swift */,
 			);
 			path = ExampleCoordinator;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				C2D75435206AA38100E1A8B2 /* MainCoordinator.swift in Sources */,
 				C295302B206AA89400DB4179 /* AboutViewController.swift in Sources */,
 				C2303FAD206923120017BA55 /* PortalViewController.swift in Sources */,
+				C23433B82077AE8B00321549 /* CoreData.swift in Sources */,
 				C23433B12076609300321549 /* ChildViewControllerContaining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

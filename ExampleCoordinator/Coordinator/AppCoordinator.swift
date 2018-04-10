@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //--------------------------------------------------------------------------------
 //    APP COORDINATOR
@@ -22,7 +23,11 @@ class AppCoordinator {
     var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
     }
     
-    init() {
+    // Private variables
+    private let container: NSPersistentContainer
+    
+    init(container: NSPersistentContainer = CoreDataManager.container) {
+        self.container = container
         navigationController.delegate = navigationControllerCoordinatorDelegate
     }
     
@@ -35,7 +40,7 @@ class AppCoordinator {
 extension AppCoordinator: NavigationControllerCoordinator {
     func start() {
         print("✅ Starting AppCoordinator")
-        showStart()
+        showMain()
     }
 }
 

@@ -9,6 +9,7 @@
 import UIKit
 import Bond
 import ReactiveKit
+import CoreData
 
 //----------------------------------------------------------------------
 //    MAIN
@@ -24,7 +25,10 @@ class MainViewModel {
     
     var state: State
     
-    init() {
+    private let container: NSPersistentContainer
+    
+    init(container: NSPersistentContainer = CoreDataManager.container) {
+        self.container = container
         self.state = State(bottomLeftHeight: Observable(50.0))
     }
     

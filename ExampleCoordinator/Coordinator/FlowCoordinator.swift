@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 //--------------------------------------------------------------------------------
 //    MAIN COORDINATOR
@@ -21,8 +22,12 @@ class FlowCoordinator {
     var navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
     var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
     }
+    
+    // Private variables
+    private let container: NSPersistentContainer
 
-    init() {
+    init(container: NSPersistentContainer = CoreDataManager.container) {
+        self.container = container
         navigationController.delegate = navigationControllerCoordinatorDelegate
     }
     
