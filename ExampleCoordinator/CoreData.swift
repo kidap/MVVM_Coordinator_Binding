@@ -56,7 +56,7 @@ class CoreDataManager {
 }
 
 extension Sequence where Element: NSManagedObject {
-    func filter(byEntityName { $0.entity.name == entityName }: String) -> [Element] {
+    func filter(byEntityName entityName: String) -> [Element] {
         return filter { $0.entity.name == entityName }
     }
     func filter(by managedObjectID: NSManagedObjectID) -> [Element] {
