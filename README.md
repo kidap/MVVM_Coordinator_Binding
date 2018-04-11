@@ -7,31 +7,31 @@
 ## NavigationControllerCoordinator
 
 ```
-class FlowCoordinator: NSObject {
+class FlowCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
-    var rootController: UIViewController { return navigationController }
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     
     //NavigationControllerCoordinator Protocol Requirements
     var navigationController: UINavigationController = UINavigationController(nibName: nil, bundle: nil)
+    var navigationControllerCoordinatorDelegate: NavigationControllerCoordinatorDelegate { return NavigationControllerCoordinatorDelegate(coordinator: self)
+    }
+
+    init() {
+        navigationController.delegate = navigationControllerCoordinatorDelegate
+    }
     
-    override init() {
-        super.init()
-        navigationController.delegate = self
+    deinit {
+        print("☠️deallocing \(self)")
     }
 }
 
 //MARK:- Coordinator
 extension FlowCoordinator: NavigationControllerCoordinator {
     func start() {
+        print("✅ Starting FlowCoordinator")
         showMainViewController()
-    }
-    
-    // UINavigationControllerDelegate - required in classes that conform to NavigationControllerCoordinator *boilerplate*
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        navigationControllerTransitioned(navigationController, didShow: viewController, animated: animated)
     }
 }
 
@@ -58,12 +58,21 @@ private extension FlowCoordinator {
 class MainTabBarCoordinator {
     
     //Coordinator Protocol Requirements
-    var didFinish: (() -> ())?
-    var childCoordinators = [UIViewController: Coordinator]()
-    var rootController: UIViewController { return tabBarController }
+    var didFinish: CoordinatorDidFinish?
+    var childCoordinators: ChildCoordinatorsDictionary = [:]
     
     // TabBarControllerCoordinator Protocol Requirements
     let tabBarController: UITabBarController = UITabBarController(nibName: nil, bundle: nil)
+    
+    // Private variables
+    var onExit: (()->())!
+    
+    init() {
+    }
+    
+    deinit {
+        print("☠️deallocing \(self)")
+    }
 }
 
 //MARK:- Coordinator
@@ -71,7 +80,7 @@ extension MainTabBarCoordinator: TabBarControllerCoordinator {
     func start() {
         let flowCoordinator = FlowCoordinator()
         let exitCoordinator = ExitCoordinator() { [unowned self] in
-            self.didFinish?()
+            self.onExit()
         }
         
         add(childCoordinators: [flowCoordinator, exitCoordinator])
